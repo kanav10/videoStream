@@ -1,0 +1,25 @@
+<!--recent uploads-->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading app-title">Recent Uploads</div>
+            <div class="panel-body" ng-show="ctrl.loading">
+                <my-loader message="'loading'" ng-show="ctrl.loading"></my-loader>
+                <p class="bg-success" ng-show="ctrl.empty" style="padding:8px;">
+                    <a href="#/upload"><i class="fa fa-camera"></i> Let's upload first video.</a>
+                </p>
+                <!--<my-video video="video" ng-repeat="video in ctrl.videos"></my-video>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <!--<my-loader message="'loading'" ng-show="ctrl.loading"></my-loader>
+        <p class="bg-success" ng-show="ctrl.empty" style="padding:8px;">
+            <a href="#/upload"><i class="fa fa-camera"></i> Let's upload first video.</a>
+        </p>-->
+        <my-video video="video" ng-repeat="video in ctrl.videos"></my-video>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="row">
+    <my-loader message="'loading'" style="margin-top: 10px;" ng-hide="ctrl.loaded.video"></my-loader>
+
+    <div class="col-xs-12" ng-show="ctrl.loaded.video">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ctrl.video.title}}
+            </div>
+            <div class="panel-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video controls class="embed-responsive-item">
+                        <source ng-src="{{ctrl.trustSrc(ctrl.video.url)}}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="panel-footer">
+                Uploaded By : {{ctrl.video.user}}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12" ng-show="ctrl.loaded.video">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Comments
+            </div>
+            <div class="panel-body">
+                <form name="ctrl.commentForm" ng-submit="ctrl.addComment()">
+                    <div class="row" style="margin:0 0 16px 0;">
+                        <div class="col-xs-12 input-group">
+                            <input type="text" class="form-control" aria-label="comment"
+                                   required
+                                   ng-model="ctrl.newComment.comment">
+                        </div>
+                        <br/>
+                        <div class="input-group col-xs-12">
+                            <button type="submit" class="btn btn-primary" ng-disabled="ctrl.loaded.commenting">submit</button>
+                        </div>
+                    </div>
+                </form>
+
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in ctrl.comments">
+                        <span>{{item.comment}}</span>
+                        <br/>
+                        <span style="font-weight: 700;">{{item.name}} | {{item.timeStamp | date : 'medium'}}</span>
+                        <br/>
+                        <button class="btn btn-danger btn-sm" ng-click="ctrl.remove(item)"> delete</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

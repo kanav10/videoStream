@@ -1,0 +1,48 @@
+<!--basic information about logged in user-->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading app-title">User Profile</div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="cover-image"></div>
+                    <div class="col-xs-4 col-md-3 col-lg-2">
+                        <img ng-src="{{ctrl.user.photoURL}}" class="img-responsive img-rounded img-thumbnail user-profile" />
+                    </div>
+                    <div class="col-xs-8 col-md-9 col-lg-10">
+                        <p style="font-weight: 700;font-size: medium">{{ctrl.user.displayName}}</p>
+                        <p style="font-weight: 500;"> {{ctrl.user.email}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--recent uploads by user-->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading app-title">Uploads</div>
+            <div class="panel-body" ng-show="ctrl.loading.videos || ctrl.empty">
+                <my-loader message="'loading'" ng-show="ctrl.loading.videos"></my-loader>
+                <p class="bg-success" ng-show="ctrl.empty" style="padding:8px;">
+                    <a href="#/upload"><i class="fa fa-camera"></i> Let's upload your first video.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12" style="margin:0 16px">
+        <div class="row" ng-repeat="video in ctrl.videos" style="margin-bottom: 36px;">
+            <my-video video="video"></my-video>
+            <div class="col-xs-12" style="margin-top: -12px;">
+                <button class="btn btn-danger btn-sm pull-right" ng-disabled="ctrl.loading.removing" ng-click="ctrl.remove(video)">
+                            <i class="fa fa-trash"></i> Delete
+                        </button>
+            </div>
+        </div>
+    </div>
+</div>

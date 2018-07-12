@@ -1,0 +1,111 @@
+body{
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 12px;
+}
+
+.app-icon{
+    padding:26px 0;
+}
+
+.app-icon span{
+    top: 0;
+    margin-left: 8px;
+    font-size: x-large;
+}
+
+.app-icon-menu-bar span{
+    font-size: large;
+    margin-left: 8px;
+}
+.app-title{
+    /*text-transform: uppercase;*/
+    font-weight: bold;
+}
+.add-padding {
+    padding: 8px;
+}
+
+.btn-login {
+    min-width: 165px;
+    text-align: center;
+}
+
+.login-page {
+    margin-top: 85px;
+}
+
+.sign-in{
+    font-size: large;
+    font-weight: 800;
+}
+
+.my-panel {
+    padding-top: 8px;
+    background: #eaeaea;
+    border: 1px solid #ccc;
+}
+
+.my-header {
+    background: #eaeaea;
+    border: 1px solid #ccc;
+    color: black;
+    font-weight: bolder;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.border-space {
+    padding: 30px;
+}
+
+.cover-image {
+    z-index: 0;
+    background: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    max-height: 300px !important;
+}
+
+my-video {
+    display: block;
+    max-width: 1138px;
+}
+
+my-loader {
+    display: block;
+}
+
+.loader {
+    border: 6px solid #727272;
+    /* Light grey */
+    border-top: 6px solid #eaeaea;
+    /* Blue */
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.logout:hover {
+    cursor: pointer;
+}
+
+.my-message {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #c3e0b8;
+    font-weight: 700;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{video.title || 'New Video'}}
+            </div>
+            <div class="panel-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video controls class="embed-responsive-item">
+                        <source ng-src="{{trustSrc(video.url)}}" type="video/mp4">
+                        <!--{{video.url}}-->
+                    </video>
+                </div>
+            </div>
+            <div class="panel-footer text-center">
+                <!--<p ng-hide="preview">{{video.description}}</p>-->
+                <!--<br ng-hide="preview"/>-->
+
+                <!--ng-href="#!/video/{{video.key}}"-->
+                <button class="btn btn-sm" ng-click="view()">
+                    <i class="fa fa-comments"></i> comments
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

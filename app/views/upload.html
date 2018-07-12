@@ -1,0 +1,31 @@
+<div class="row">
+
+    <!--uploading animation-->
+    <my-loader style="margin-top: 100px;" message="'saving'" ng-show="ctrl.loading"></my-loader>
+
+    <div class="col-xs-12" ng-hide="ctrl.loading">
+        <div class="panel panel-default">
+            <div class="panel-heading app-title">Upload Video</div>
+            <div class="panel-body">
+                <form name="ctrl.videoForm" ng-submit="ctrl.save()">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input ng-model="ctrl.video.title" type="text" class="form-control" id="title" placeholder="Title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input ng-model="ctrl.video.description" type="text" class="form-control" id="description" placeholder="Description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileButton">File input</label>
+                        <input type="file" id="fileButton" progress value="0" max="100" accept="video/*"/>
+                        <progress class="help-block" value="0" max="100" id="uploader"
+                                  ng-show="ctrl.status !== 0">{{ctrl.status}}
+                        </progress> <span ng-show="ctrl.status !== 0">{{ctrl.status}}</span>
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-disabled="ctrl.disableUpload">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
